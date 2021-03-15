@@ -1,0 +1,20 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "com.shuangyangad.mta.event";
+option java_outer_classname = "Event";
+option objc_class_prefix = "HLW";
+
+package event;
+
+service Greeter {
+  rpc track (EventRequest) returns (EventResponse) {}
+}
+
+message EventRequest {
+  string event = 1;
+}
+
+message EventResponse {
+  string message = 1;
+  int32 code = 2;
+}
